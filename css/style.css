@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
+
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
+}
+
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    min-height: 100vh;
+    align-content: center;
+    font-size: 13px;
+    color: var(--white);
+    background-color: var(--grey-100);
+}
+
+.main {
+    padding: 5rem 0;
+}
+
+.wrapper {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.testimonial {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 10px 10px 30px hsla(0, 0%, 7%, 0.445);
+}
+
+
+.perfil {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+.quotation {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 4.8rem;
+    z-index: 0;
+}
+
+.perfil__img {
+    display: block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border: 1px solid var(--white);
+}
+
+.perfil__name {
+    font-weight: 600;
+}
+
+.perfil__work:not(.perfil__work--grey) {
+    color: var(--grey-100);
+}
+
+.testimonial__paragraph {
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial__description {
+    line-height: 1.2rem;
+}
+
+.testimonial__description:not(.testimonial__description--grey) {
+    color: var(--grey-100);
+}
+
+
+.daniel {
+    background-color: var(--purple-500);
+}
+
+.jonathan {
+    background-color: var(--grey-500)
+}
+
+.jeanette {
+    background-color: var(--white);
+    color: var(--grey-400);
+}
+
+.patrick {
+    background-color: var(--dark-blue);
+}
+
+.kira {
+    background-color: var(--white);
+    color: var(--grey-400);
+}
+
+
+@media screen and (min-width: 800px) {
+    .wrapper {
+        width: fit-content;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 285px 320px 285px 285px;
+        grid-template-rows: 285px 285px;
+        grid-template-areas:  'daniel daniel jonathan kira'
+                    'jeanette patrick patrick kira';
+    }
+
+    .quotation {
+        display: block;
+    }
+
+    .testimonial { 
+        height: 100%;
+    }
+    .daniel {
+        grid-area: daniel;
+    }
+    .jonathan {
+        grid-area: jonathan;
+    }
+
+    .kira {
+        grid-area: kira;
+    }
+
+    .jeanette {
+        grid-area: jeanette;
+    }
+    .patrick {
+        grid-area: patrick;
+    }
+
+}
