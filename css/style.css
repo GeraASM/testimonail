@@ -131,7 +131,7 @@ body {
         display: grid;
         gap: 30px;
         grid-template-columns: 285px 320px 285px 285px;
-        grid-template-rows: 285px 285px;
+        grid-template-rows: 300px 285px;
         grid-template-areas:  'daniel daniel jonathan kira'
                     'jeanette patrick patrick kira';
     }
